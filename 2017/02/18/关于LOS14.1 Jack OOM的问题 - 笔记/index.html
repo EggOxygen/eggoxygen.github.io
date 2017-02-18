@@ -11,7 +11,7 @@
     <!--Description-->
     
         <meta name="description" content="关于编译LineageOS &amp;amp;&amp;amp; 其他AOSP时候会遇到一些无法避免的错误这个时候只能靠我们的双手手动去解决频繁的make clean并不能解决问题
-这个是关于LOS14.1 编译时 Jack OOM的问题    解决方法很简单 增大的堆内存上线    比如我我个人是4G RAM +">
+这个是关于LOS14.1 编译时 Jack OOM的问题    解决方法很简单 增大的堆内存上限    比如我我个人是4G RAM +">
     
 
     <!--Author-->
@@ -164,9 +164,9 @@
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>关于编译LineageOS &amp;&amp; 其他AOSP时候会遇到一些无法避免的错误<br>这个时候只能靠我们的双手手动去解决<br>频繁的make clean并不能解决问题</p>
-<p>这个是关于LOS14.1 编译时 Jack OOM的问题<br>    解决方法很简单 增大的堆内存上线<br>    比如我我个人是4G RAM + 8G SWAP</p>
+<p>这个是关于LOS14.1 编译时 Jack OOM的问题<br>    解决方法很简单 增大的堆内存上限<br>    比如我我个人是4G RAM + 8G SWAP</p>
 <p> 首先<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit <span class="built_in">source</span>/prebuilts/sdk/tools/jack-admin</div></pre></td></tr></table></figure></p>
-<p> 接着用Ctrl + F 搜索<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JACK_SERVER_COMMAND=<span class="string">"java -XX:MaxJavaStackTraceDepth=-1 -Djava.io.tmpdir=<span class="variable">$TMPDIR</span> <span class="variable">$JACK_SERVER_VM_ARGUMENTS</span> -cp <span class="variable">$LAUNCHER_JAR</span> <span class="variable">$LAUNCHER_NAME</span>"</span></div></pre></td></tr></table></figure></p>
+<p> 接着用 Ctrl + F 搜索<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JACK_SERVER_COMMAND=<span class="string">"java -XX:MaxJavaStackTraceDepth=-1 -Djava.io.tmpdir=<span class="variable">$TMPDIR</span> <span class="variable">$JACK_SERVER_VM_ARGUMENTS</span> -cp <span class="variable">$LAUNCHER_JAR</span> <span class="variable">$LAUNCHER_NAME</span>"</span></div></pre></td></tr></table></figure></p>
 <p> 改成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JACK_SERVER_COMMAND=<span class="string">"java -XX:MaxJavaStackTraceDepth=-1 -Djava.io.tmpdir=<span class="variable">$TMPDIR</span> <span class="variable">$JACK_SERVER_VM_ARGUMENTS</span> -Xmx4096m -cp <span class="variable">$LAUNCHER_JAR</span> <span class="variable">$LAUNCHER_NAME</span>"</span></div></pre></td></tr></table></figure></p>
 <p> 改完之后保存退出即可<br> Tip - 如果编译失败之后修改的需要手动重启jack server<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./prebuilts/sdk/tools/jack-admin stop-server</div><div class="line">./prebuilts/sdk/tools/jack-admin start-server</div></pre></td></tr></table></figure></p>
 
