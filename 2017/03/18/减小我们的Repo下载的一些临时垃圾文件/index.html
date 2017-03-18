@@ -10,7 +10,9 @@
 
     <!--Description-->
     
-        <meta name="description" content="在我们每此进行Repo一个很大的项目时候通常会因为各种原因 比如Github速度慢啥的导致下载一眼不合就EOF 各种Error这导致原本只需要下载1Gb的东西可以下载到5-6Gb之多那么问题来了 当Repo Checkout完毕之后我们应该如何减小repo文件夹的大小？答案就是删除一些下载失败的临时">
+        <meta name="description" content="在我们每此进行Repo一个很大的项目时候通常会因为各种原因 比如Github速度慢啥的导致下载一言不合就EOF 各种Error
+这导致原本只需要下载1Gb的东西可以下载到5-6Gb之多
+那么问题来了 当Repo Checkout完毕之后我们应该如何减小repo文件夹的大小？答案就是删除一些下载失败的">
     
 
     <!--Author-->
@@ -176,7 +178,10 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>在我们每此进行Repo一个很大的项目时候<br>通常会因为各种原因 比如Github速度慢啥的<br>导致下载一眼不合就EOF 各种Error<br>这导致原本只需要下载1Gb的东西可以下载到5-6Gb之多<br>那么问题来了 当Repo Checkout完毕之后<br>我们应该如何减小repo文件夹的大小？<br>答案就是删除一些下载失败的临时文件<br>本文中拿上周同步的Flyme5源码为例子</p>
+                <p>在我们每此进行Repo一个很大的项目时候<br>通常会因为各种原因 比如Github速度慢啥的<br>导致下载一言不合就EOF 各种Error</p>
+<p>这导致原本只需要下载1Gb的东西可以下载到5-6Gb之多</p>
+<p>那么问题来了 当Repo Checkout完毕之后<br>我们应该如何减小repo文件夹的大小？<br>答案就是删除一些下载失败的临时文件</p>
+<p>Tip - 本文中拿上周同步的Flyme5源码为例子</p>
 <p>首先cd到Flyme5的.repo文件夹下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="string">'/media/eggoxygen/Source_Main/Flyme5/.repo'</span></div></pre></td></tr></table></figure></p>
 <p>然后呢 执行以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find .  -name <span class="string">"*tmp_pack*"</span> -exec rm -rf &#123;&#125; \;</div></pre></td></tr></table></figure></p>
 <p>然后你再次查看一次repo大小 是不是觉得小了很多呢？</p>
