@@ -187,13 +187,13 @@
 <p>所以需要安装HTC的驱动<br>驱动在附件网址有的下载</p>
 <hr>
 <p>安装完驱动之后<br>接着将需要解锁网络的机子重启进入Download Mode</p>
-<p>Q - 如何重启进入Download Mode<br>A - 手机关机 然后长按电源+音量减 直到出先一个比正常开机小的HTC</p>
+<p>Q - 如何重启进入Download Mode<br>A - 手机关机 然后长按电源 + 音量减<br>    直到出先一个比正常开机小的HTC</p>
 <hr>
 <p>然后解压附件里面的ADB_WIN 解压到任意地方<br>接着使用Windows的CMD cd到你解压ADB的目录<br>输入fastboot 如果出现一大串英文代表成功</p>
 <hr>
-<p>现在我们把手机链接电脑<br>此时在电脑的CMD里面输入’fastboot devices’<br>如果出现 ‘XXXXXXXXXX fastboot’<br>那么代表驱动正常</p>
+<p>现在我们把手机链接电脑<br>此时在电脑的CMD里面输入’ fastboot devices ‘<br>如果出现 ‘ XXXXXXXXXX fastboot ‘<br>那么代表驱动正常</p>
 <hr>
-<p>然后现在开始重启进入Bootloader<br>在CMD里面输入’fastboot reboot-bootloader’<br>手机会自动重启到Fastboot里面(也就是白底的界面)<br>现在将misc.img放到ADB目录<br>然后在电脑里面输入’fastboot flash misc misc.img’<br>如果没有出现Failed的字眼 那么恭喜你修复成功<br>接着只需要输入’fastboot reboot’手机就会重启了</p>
+<p>然后现在开始重启进入Bootloader<br>在CMD里面输入’ fastboot reboot-bootloader ‘<br>手机会自动重启到Fastboot里面(也就是白底的界面)<br>现在将misc.img放到ADB目录<br>然后在电脑里面输入’ fastboot flash misc misc.img ‘<br>如果没有出现Failed的字眼 那么恭喜你修复成功<br>接着只需要输入’ fastboot reboot ‘手机就会重启了</p>
 <hr>
 <p>然后就大功告成了</p>
 <p>–By EggOxygen</p>
