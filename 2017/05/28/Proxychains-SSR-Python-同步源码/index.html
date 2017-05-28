@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="本次主要讲述如何使用Proxychains中的socks5代理以及SSR Python版本进行源码同步
+首先就是安装Proxychains1sudo apt-get install proxychains
+
+然后使用Gedit配置Proxychains1sudo gedit /etc/proxych">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="EggOxygen">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Proxychains + SSR Python 同步源码"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="蛋 氧"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Proxychains + SSR Python 同步源码 - 蛋 氧</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">EggOxygen Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/EggOxygen">
+                            
+                                Github
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://blog.flteam.org/wp-content/uploads/2017/02/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Proxychains + SSR Python 同步源码</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-05-28
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/note/">#note</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>本次主要讲述如何使用Proxychains中的socks5代理<br>以及SSR Python版本进行源码同步</p>
+<p>首先就是安装Proxychains<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install proxychains</div></pre></td></tr></table></figure></p>
+<hr>
+<p>然后使用Gedit配置Proxychains<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/proxychains.conf</div></pre></td></tr></table></figure></p>
+<p>其中 主要修改几个地方<br>将 ‘dynamic_chain’ 前面的注释(#)去掉<br>将 ‘strict_chain’ 前面加上注释(#)<br>将 ‘proxy_dns’ 前面加上注释(#)</p>
+<p>然后在底下的 ‘ProxyList’ 添加socks代理<br>注: 必须为socks5代理 目前SSR Python版本只支持Socks5<br>比如这样添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">socks5	127.0.0.1	1060</div><div class="line"></div><div class="line">前面的socks5不变 后面跟上的本地使用的ip 后面跟上端口</div></pre></td></tr></table></figure></p>
+<hr>
+<p>到此为止Proxychains部分就配置完了<br>接下来就是SSR Python的配置<br>首先将SSR Py版本Clone下来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/shadowsocksr/shadowsocksr.git</div></pre></td></tr></table></figure></p>
+<p>然后cd到clone的目录 执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bash initcfg.sh</div></pre></td></tr></table></figure></p>
+<p>然后找到当前目录(shadowsocks)里面一个名为config.json<br>里面提供了最基本的参数文件 请自行根据服务器进行修改<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"server"</span>: <span class="string">"服务器IP地址或者网址"</span>,</div><div class="line">    <span class="string">"server_ipv6"</span>: <span class="string">"::"</span>,</div><div class="line">    <span class="string">"server_port"</span>: 服务器端口号,</div><div class="line">    <span class="string">"local_address"</span>: <span class="string">"填入刚刚proxychains配置的本地IP"</span>,</div><div class="line">    <span class="string">"local_port"</span>: 填入刚刚proxychains配置的端口,</div><div class="line"></div><div class="line">    <span class="string">"password"</span>: <span class="string">"服务器密码"</span>,</div><div class="line">    <span class="string">"method"</span>: <span class="string">"加密方式"</span>,</div><div class="line">    <span class="string">"protocol"</span>: <span class="string">"填入服务器协议"</span>,</div><div class="line">    <span class="string">"protocol_param"</span>: <span class="string">""</span>,</div><div class="line">    <span class="string">"obfs"</span>: <span class="string">"填入服务器混淆"</span>,</div><div class="line">    <span class="string">"obfs_param"</span>: <span class="string">""</span>,</div><div class="line">    <span class="string">"speed_limit_per_con"</span>: 0,</div><div class="line">    <span class="string">"speed_limit_per_user"</span>: 0,</div><div class="line"></div><div class="line">    <span class="string">"additional_ports"</span> : &#123;&#125;, </div><div class="line">    <span class="string">"additional_ports_only"</span> : <span class="literal">false</span>, </div><div class="line">    <span class="string">"timeout"</span>: 120,</div><div class="line">    <span class="string">"udp_timeout"</span>: 60,</div><div class="line">    <span class="string">"dns_ipv6"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"connect_verbose_info"</span>: 0,</div><div class="line">    <span class="string">"redirect"</span>: <span class="string">""</span>,</div><div class="line">    <span class="string">"fast_open"</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>官方详细的json解析地址[<a href="https://github.com/breakwa11/shadowsocks-rss/wiki/config.json" target="_blank" rel="external">https://github.com/breakwa11/shadowsocks-rss/wiki/config.json</a>]</p>
+<p>修改完config.json之后 即可启动SSR服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python local.py -c path_to_your_config</div></pre></td></tr></table></figure></p>
+<p>如果没显示ERROR字样 代表启动成功</p>
+<p>这个时候就使用代理同步源码了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">proxychains repo sync -j4</div></pre></td></tr></table></figure></p>
+<hr>
+<p>为了后期的方便 可直接在bashrc里面添加一个part直接快速执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/home/eggoxygen/ssr"</span></div></pre></td></tr></table></figure></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 EggOxygen<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
