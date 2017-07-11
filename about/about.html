@@ -81,7 +81,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/about.html" />
+        <link rel="canonical" href="http://yoursite.com/about/about.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -281,17 +281,8 @@
                 
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/slash_parade.png)">
     
             <p class="article-headline-p">
                 Hello Blog
@@ -353,7 +344,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello Blog&url=http://yoursite.com/about.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello Blog&url=http://yoursite.com/about/about.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -362,7 +353,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello Blog&url=http://yoursite.com/about.html&via=EggOxygen" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello Blog&url=http://yoursite.com/about/about.html&via=EggOxygen" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -371,7 +362,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/about.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/about/about.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -380,7 +371,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/about.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/about/about.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -392,7 +383,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=蛋 and 氧&title=Hello Blog&summary=null&pics=http://yoursite.comundefined&url=http://yoursite.com/about.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=蛋 and 氧&title=Hello Blog&summary=null&pics=http://yoursite.comundefined&url=http://yoursite.com/about/about.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -546,6 +537,16 @@
     
 
     <!-- Pages  -->
+    
+        <li>
+            <a href="/about.md" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
     
 
     <!-- Article Number  -->
